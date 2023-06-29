@@ -1,4 +1,4 @@
-import express, { Router } from 'express';
+import { Router } from 'express';
 
 import graphicsController from '../controllers/graphicsController';
 
@@ -11,9 +11,9 @@ class GameRoutes {
     }
 
     config() {
-        this.router.get('/tramos', graphicsController.tramos);
-        this.router.get('/cliente', graphicsController.cliente);
-        this.router.get('/tramos-cliente', graphicsController.tramosCliente);
+        this.router.post('/tramos', graphicsController.tramos);
+        this.router.post('/cliente', graphicsController.cliente);
+        this.router.post('/tramos-cliente', graphicsController.tramosCliente);
     }
 
 }
