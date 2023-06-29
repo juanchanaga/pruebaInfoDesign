@@ -87,12 +87,18 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "bootswatch/dist/minty/bootstrap.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "bootstrap/dist/js/bootstrap.min.js"
+            ]
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "7b1ac2f5-d71c-41f3-8903-c29ded932749"
   }
 }

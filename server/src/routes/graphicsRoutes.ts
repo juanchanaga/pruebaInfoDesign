@@ -11,7 +11,6 @@ class GameRoutes {
     }
 
     config() {
-        this.router.get('/', graphicsController.form);
         this.router.get('/tramos', graphicsController.tramos);
         this.router.get('/cliente', graphicsController.cliente);
         this.router.get('/tramos-cliente', graphicsController.tramosCliente);

@@ -14,6 +14,7 @@ pool.then(promise => {
     return promise.getConnection();
 }).then(connection => {
     connection.release();
+    console.log('DB is Connected');
 })
 
 export default pool;
