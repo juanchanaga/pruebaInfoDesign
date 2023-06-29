@@ -1,1 +1,43 @@
-<p>tramos-cliente works!</p>
+<form>
+  <fieldset>
+    <legend>Tramos Cliente</legend>
+    <div class="form-group row align-items-center">
+      <label for="fInicial" class="col-1 col-form-label">Fecha Inicio</label>
+      <div class="col-5">
+        <div class="input-group date" id="dateInicial">
+          <input name="fInicial"  type="date" class="form-control" id="fInicial" [(ngModel)]="fechas.fInicial"/>
+          <span class="input-group-append">
+        </span>
+        </div>
+      </div>
+      <label for="fFinal" class="col-1 col-form-label">Fecha Fin</label>
+      <div class="col-5">
+        <div class="input-group date" id="dateFinal">
+          <input name="fFinal"  type="date" class="form-control" id="fFinal" [(ngModel)]="fechas.fFinal"/>
+          <span class="input-group-append">
+        </span>
+        </div>
+      </div>
+    </div>
+    <div class="form-group d-flex flex-row justify-content-center">
+      <button type="submit" class="btn btn-primary mt-3 me-3" (click)="getTramosCliente()">Consultar</button>
+      <button type="submit" class="btn btn-secondary mt-3 ms-3" (click)="reset()">Limpiar</button>
+    </div>
+  </fieldset>
+</form>
+
+<div id="graficos" class="d-flex flex-column d-none mt-5">
+  <table class="table table-hover">
+    <thead>
+    <tr class="table-dark">
+      <td>Línea</td>
+      <td>Pérdidas</td>
+      <td>Tipo Cliente</td>
+    </tr>
+    </thead>
+    <tbody id="table-body">
+    <tr class="table-light">
+    </tr>
+    </tbody>
+  </table>
+</div>
