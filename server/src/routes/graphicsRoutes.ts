@@ -11,11 +11,10 @@ class GameRoutes {
     }
 
     config() {
-        // this.router.get('/', graphicsController.list);
-        // this.router.get('/:id', graphicsController.getOne);
-        // this.router.post('/', graphicsController.create);
-        // this.router.put('/:id', graphicsController.update);
-        // this.router.delete('/:id', graphicsController.delete);
+        this.router.get('/', graphicsController.form);
+        this.router.get('/tramos', graphicsController.tramos);
+        this.router.get('/cliente', graphicsController.cliente);
+        this.router.get('/tramos-cliente', graphicsController.tramosCliente);
     }
 
 }
