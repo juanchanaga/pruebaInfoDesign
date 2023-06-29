@@ -286,12 +286,14 @@ export class ClienteComponent {
   }
 
   getCliente() {
+    window.document.getElementById('loading')?.classList.remove('d-none');
     this.graphicsService.getCliente(this.fechas)
       .subscribe({
           next: (response: Tramos[] | Object) => {
             this.drawChart1(response as any);
             this.drawChart2(response as any);
             this.drawChart3(response as any);
+            window.document.getElementById('loading')?.classList.add('d-none');
             window.document.getElementById('graficos')?.classList.remove('d-none');
           },
           error: (e) => console.error(e)

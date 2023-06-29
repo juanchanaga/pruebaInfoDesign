@@ -1,4 +1,4 @@
-import {Component, HostBinding, Inject, NgZone, PLATFORM_ID} from '@angular/core';
+import {Component, HostBinding, Inject, PLATFORM_ID} from '@angular/core';
 import {GraphicsService} from "../../services/graphics.service";
 import {Fecha, Tramos} from "../../models/Graphics";
 
@@ -287,12 +287,14 @@ export class TramosComponent {
   }
 
   getTramos() {
+    window.document.getElementById('loading')?.classList.remove('d-none');
     this.graphicsService.getTramos(this.fechas)
       .subscribe({
           next: (response: Tramos[] | Object) => {
             this.drawChart1(response as any);
             this.drawChart2(response as any);
             this.drawChart3(response as any);
+            window.document.getElementById('loading')?.classList.add('d-none');
             window.document.getElementById('graficos')?.classList.remove('d-none');
           },
           error: (e) => console.error(e)
